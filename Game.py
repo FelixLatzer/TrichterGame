@@ -109,6 +109,8 @@ class Game:
         ttk.Label(self.stats_frame, text="Selection Count", font=("Arial", 10, "bold")).grid(column=2, row=0)
         ttk.Label(self.stats_frame, text="Statistic", font=("Arial", 10, "bold")).grid(column=3, row=0)
 
+        self.player.sort(key= lambda p: p.drink_count, reverse=True)
+
         # Add each player's stats
         for index, player in enumerate(self.player):
             ttk.Label(self.stats_frame, text=player.name).grid(column=0, row=index + 1)
